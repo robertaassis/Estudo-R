@@ -240,4 +240,166 @@ df$Nova <- NA
 df$Nova[1:3] <- c(2,5,10)
 class(df$Nova)
 
-# AULA 14 - Filtros 
+# AULA 14 - Filtros em variáveis
+
+vogais <- c("a","e", "i", "o", "u")
+vogais[3]
+vogais[-3]
+vogais[3:5]
+
+length(vogais)
+vogais[3:length(vogais)]
+vogais[(length(vogais)-2):length(vogais)]
+
+a <- 3
+b <- 5
+vogais[a:b]
+
+vogais[vogais=="e"]
+vogais[vogais!="e"]
+
+a <- c(1,2,3,4,5)
+a[a>2]
+a[a>=2]
+
+# AULA 15 - Filtros em Data Frames
+
+setwd("C:/DidaticaTech")
+df <- read.csv("DataFrame.csv")
+
+df[1]
+df[1,]
+
+df[1:6]
+df[-4]
+
+df[1,1]
+df[1,1:6]
+df[1,-4]
+
+df[1:3,1:6]
+df[-1,-4]
+df <- df[c(-3,-4,-5,-6)] # modificando df
+
+df[1,1] #filttando as variaveis
+df$DIA_SEM[1]
+df$AUTO[2:4]
+df[df$UPS==1,]
+
+df <- df[df$UPS==1,]
+
+
+df1 <- read.csv("DataFrame.csv")
+view(df1)
+view(df)
+
+# AULA 16 - If, For, While
+if(5==5) 6+6
+
+if(5==5) 6+6 else
+
+if(condition){
+
+}
+
+if(condition){
+    6+6
+} else {
+    "condição não atendida"
+}
+
+idades <- c(25,30)
+nomes <- c("Joao","Caina")
+df <- data.frame(nomes,idades)
+
+if (df$idades[df$nomes==”Joao”] > df$idades[df$nomes==”Caina”]){
+“Mais velho: Joao”
+} else{
+“Mais velho: Caina”
+}
+
+idades <- c(25,30,24,29,31,12)
+nomes <- c("Joao","Caina","Maria","Leo","Lia","Enzo")
+df <- data.frame(nomes,idades)
+
+for(i in idades){
+    print(i)
+}
+
+for
+
+v <- 0
+
+for(i in df$idades){
+    if(i>v) {v<-i}
+}
+df$nomes[df$idades==v]
+
+x <- 0
+while(x<20){
+    print(x)
+    x <- x+1
+}
+
+while
+
+x <- 0
+cont <- 0
+idades100 <- 0
+
+while(x>100){
+    cont<-cont+1
+    idades100[cont] <- idades[cont]
+    x <- x+idades[cont]
+}
+
+idades
+idades100
+sum(idades1000)
+
+
+# AULA 17 - Funções
+
+a <- c(423,464,69,519,123,258)
+
+x <- 0
+for(i in a){
+    x <- x +i 
+}
+print(x)
+
+b <- c(51,36,123,98,23,37,63,3)
+
+x <- 0
+for(i in b){
+    x <- x +i 
+}
+print(x)
+
+soma<- funcion(y){
+    x<-0
+    for(i in y){
+        x <- x+i
+    }
+    print(x)
+}
+
+soma(a)
+soma(b)
+
+soma2 <- function (y,z){
+    x<-0
+    c <- 0
+    for(i in y){
+        c <- c+1
+        x <- z[c]+1
+        print(x)
+    }
+}
+
+soma2(a,b)
+soma2(b,a)
+
+a+b
+sum(a)
+sum(b)
